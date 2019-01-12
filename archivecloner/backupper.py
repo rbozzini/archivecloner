@@ -125,13 +125,15 @@ if __name__ == "__main__":
              'jpeg': RULE_NEWER, 
              'jpg': RULE_NEWER, 
              'png': RULE_NEWER,
-             'lrcat ': RULE_NEWER}
+             'lrcat': RULE_NEWER,
+             'tiff': RULE_NEWER}
     
     report = BackupReport()
     report.start()
-    bkp = CopyFile("/Users/rossellabozzini/Dev/python-repo/resources/Backup/Source",
-                   "/Users/rossellabozzini/Dev/python-repo/resources/Backup/Dest", rules, report)
+    bkp = CopyFile("/Users/rossellabozzini/Dev/archivecloner/tests/resources/backup/source",
+                   "/Users/rossellabozzini/Dev/archivecloner/tests/resources/backup/Dest", rules, report)
     bkp.backup(True)
-    time.sleep(5)
+    #bkp.backup(False)
+    #time.sleep(5)
     report.end()
     print(report.to_json())
