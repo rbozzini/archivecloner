@@ -7,10 +7,10 @@ verify_ssl = true
 pep8 = "*"
 pylint = "*"
 pytest = "*"
+pytest-smartcov = "*"
 
 [packages]
 requests = "*"
-develop = "*"
 
 [requires]
 python_version = "3.7"
