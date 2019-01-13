@@ -19,9 +19,6 @@ def test_backup_folders_couple():
     source_root = os.path.join(dirname, 'resources/backup/source')
     dest_root = os.path.join(dirname, 'resources/backup/dest')
 
-    #bkp = CopyFile("/Users/rossellabozzini/Dev/archivecloner/tests/resources/backup/source",
- #                  "/Users/rossellabozzini/Dev/archivecloner/tests/resources/backup/Dest", rules, report)
-
     bkp = CopyFile(source_root, dest_root, rules, report)
 
     bkp.backup(True)
