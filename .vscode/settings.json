@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "/opt/local/bin/python"
+    "python.pythonPath": "/opt/local/bin/python",
+    "python.unitTest.pyTestArgs": [
+        "tests"
+    ],
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.pyTestEnabled": true
 }

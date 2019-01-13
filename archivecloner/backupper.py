@@ -1,7 +1,7 @@
 import os
 import time
 from shutil import copyfile
-from backup_report import BackupReport
+from .backup_report import BackupReport
 
 
 # Copia sempre senza alcun controllo
@@ -119,21 +119,3 @@ class CopyFile(Backupper):
                 os.remove(file_path)
             self.report.add_deleted_file(file_path)
 
-if __name__ == "__main__":
-
-    rules = {'nef': RULE_ONCE, 
-             'jpeg': RULE_NEWER, 
-             'jpg': RULE_NEWER, 
-             'png': RULE_NEWER,
-             'lrcat': RULE_NEWER,
-             'tiff': RULE_NEWER}
-    
-    report = BackupReport()
-    report.start()
-    bkp = CopyFile("/Users/rossellabozzini/Dev/archivecloner/tests/resources/backup/source",
-                   "/Users/rossellabozzini/Dev/archivecloner/tests/resources/backup/Dest", rules, report)
-    bkp.backup(True)
-    #bkp.backup(False)
-    #time.sleep(5)
-    report.end()
-    print(report.to_json())
